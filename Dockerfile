@@ -6,8 +6,5 @@ ENV RAILS_VERSION 5.2.2
 
 RUN gem install rails -v ${RAILS_VERSION}
 
-FROM ruby:2.6-alpine
-COPY --from=builder /usr/local/bundle /usr/local/bundle
-
 ENTRYPOINT [ "rails" ]
 CMD [ "-h" ]
